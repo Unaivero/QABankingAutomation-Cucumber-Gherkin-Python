@@ -1,0 +1,92 @@
+{
+    "environment": "test",
+    "base_url": "https://mybank.example.com",
+    "api_base_url": "https://api.mybank.example.com/v1",
+    "headless": false,
+    "default_timeout": 15,
+    "screenshot_on_failure": true,
+    "retry_attempts": 2,
+    "users": {
+        "standard_user": {
+            "username": "standard_user@example.com",
+            "password": "SecureP@ss123!"
+        },
+        "premium_user": {
+            "username": "premium_user@example.com",
+            "password": "PremiumP@ss456!"
+        },
+        "admin_user": {
+            "username": "admin_user@example.com",
+            "password": "AdminP@ss789!"
+        },
+        "2fa_user": {
+            "username": "2fa_user@example.com",
+            "password": "2FAUserP@ss!"
+        }
+    },
+    "database": {
+        "host": "db.mybank-internal.com",
+        "port": 5432,
+        "database": "mybank_test",
+        "user": "test_automation_user",
+        "connection_timeout": 30
+    },
+    "reporting": {
+        "allure_results_dir": "./reports/allure-results",
+        "screenshots_dir": "./reports/screenshots",
+        "junit_dir": "./reports/junit",
+        "html_report_dir": "./reports/html",
+        "email_recipients": ["qa-team@mybank.example.com", "dev-leads@mybank.example.com"]
+    },
+    "api_timeouts": {
+        "connect": 10,
+        "read": 30,
+        "write": 30
+    },
+    "feature_flags": {
+        "use_2fa": true,
+        "use_biometrics": true,
+        "enable_external_transfers": true,
+        "enable_investment_features": true,
+        "enable_bill_pay": true,
+        "enable_mobile_deposit": true,
+        "enable_p2p_payments": true,
+        "enable_card_controls": true,
+        "enable_regulatory_checks": true,
+        "enable_fraud_detection": true
+    },
+    "test_data": {
+        "checking_account_number": "123456789",
+        "savings_account_number": "987654321",
+        "credit_card_number": "4111-XXXX-XXXX-1111",
+        "routing_number": "072000326",
+        "test_payees": [
+            {
+                "name": "Electric Company",
+                "account_number": "EL-123456"
+            },
+            {
+                "name": "Mortgage Lender",
+                "account_number": "ML-789012"
+            },
+            {
+                "name": "Internet Provider",
+                "account_number": "ISP-345678"
+            }
+        ]
+    },
+    "mobile": {
+        "android_app_package": "com.mybank.banking",
+        "android_app_activity": "com.mybank.banking.MainActivity",
+        "ios_bundle_id": "com.mybank.banking",
+        "appium_server_url": "http://localhost:4723/wd/hub"
+    },
+    "security": {
+        "allowed_authentication_attempts": 5,
+        "password_expiry_days": 90,
+        "session_timeout_minutes": 15,
+        "token_expiry_minutes": 30,
+        "require_complex_passwords": true,
+        "minimum_password_length": 12
+    }
+}
